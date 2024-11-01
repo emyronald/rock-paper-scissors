@@ -35,6 +35,8 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
     return "win";
+  } else {
+    return "don't score";
   }
 }
 
