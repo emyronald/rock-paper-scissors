@@ -30,7 +30,7 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice === "scissors" && computerChoice === "rock")
   ) {
     console.log("you lose");
-    return "loss";
+    return "lose";
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
@@ -46,13 +46,13 @@ function playGame() {
     let roundResult = playRound(getHumanChoice(), getComputerChoice());
     if (roundResult === "win") {
       humanScore++;
-    } else if (roundResult === "loss") {
+    } else if (roundResult === "lose") {
       computerScore++;
     } else if (roundResult === "draw") {
       humanScore++;
       computerScore++;
     }
-    console.log(`Round ${i}
+    console.log(`Round ${i}: You ${roundResult}
 Your score: ${humanScore}
 Computer score: ${computerScore}`);
   }
