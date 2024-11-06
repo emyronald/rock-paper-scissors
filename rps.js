@@ -1,3 +1,5 @@
+const div = document.querySelector("div");
+div.addEventListener("click", playGame);
 function getComputerChoice() {
   let index = Math.ceil(Math.random() * 3);
   if (index === 1) {
@@ -9,8 +11,7 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  let choice = String(prompt("rock, paper or scissors?")).toLowerCase();
+function getHumanChoice(e) {
   if (choice === "rock" || choice === "paper" || choice === "scissors") {
     return choice;
   } else {
