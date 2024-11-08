@@ -7,11 +7,12 @@
 body {
   background-color: #8db4c7;
 }
-div > button {
+div > button,
+#reset {
   background-color: #39657a;
   color: aliceblue;
   border: transparent;
-  border-radius: 2%;
+  border-radius: 0.3em;
   padding: 1em 2.5em;
   font-size: larger;
 }
@@ -21,4 +22,21 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  gap: 2em;
+}
+div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+#reset {
+  display: block;
+  flex: 1;
+}
+p {
+  font-size: xx-large;
+  font-weight: bold;
+  color: #742869;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

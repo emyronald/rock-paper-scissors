@@ -4,7 +4,7 @@ const humanScore = document.querySelector(".human-score");
 const compScore = document.querySelector(".computer-score");
 const main = document.querySelector("main");
 const reset = document.querySelector("#reset");
-
+const game = document.querySelector(".game");
 let hScore = 0;
 let cScore = 0;
 
@@ -26,20 +26,20 @@ function playGame(e) {
   let computerChoice = getComputerChoice();
   let choice = e.target.id;
   if (choice === computerChoice) {
-    message.textContent = "draw";
+    message.textContent = "It's a draw";
   } else if (
     (choice === "rock" && computerChoice === "paper") ||
     (choice === "paper" && computerChoice === "scissors") ||
     (choice === "scissors" && computerChoice === "rock")
   ) {
-    message.textContent = "lose";
+    message.textContent = "Computer wins this round";
     cScore++;
   } else if (
     (choice === "rock" && computerChoice === "scissors") ||
     (choice === "paper" && computerChoice === "rock") ||
     (choice === "scissors" && computerChoice === "paper")
   ) {
-    message.textContent = "win";
+    message.textContent = "You win this round";
     hScore++;
   }
   humanScore.textContent = `Your score is : ${hScore}`;
@@ -47,12 +47,12 @@ function playGame(e) {
   if (hScore === 5 || cScore === 5) {
     const winner = document.createElement("p");
     if (hScore === 5) {
-      winner.textContent = "you won";
+      winner.textContent = "Game over! You Win";
     } else {
-      winner.textContent = "you lose";
+      winner.textContent = "Game over! You Lose";
     }
 
-    main.appendChild(winner);
+    game.appendChild(winner);
     div.removeEventListener("click", playGame);
   }
 }
@@ -62,4 +62,6 @@ reset.addEventListener("click", () => {
   humanScore.textContent = "";
   compScore.textContent = "";
   message.textContent = "";
+  div.addEventListener("click", playGame);
+  game.textContent = "";
 });
